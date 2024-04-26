@@ -27,6 +27,30 @@ import { SwiperNotis } from './assets/components/notification/swipernotis.jsx';
 
 function App() {
 
+  const cleanArray = [
+    { nomedojogo: 'Mines', codigo: 'https://donald.bet/casino/spribe/mines/' },
+    { nomedojogo: 'Aviator', codigo: 'https://donald.bet/casino/spribe/aviator/' },
+    { nomedojogo: 'SpaceMan', codigo: 'https://donald.bet/casino/pragmaticplay/live-spaceman/' },
+    { nomedojogo: 'Tiger', codigo: 'https://donald.bet/casino/pgsoft/fortune-tiger/' },
+    { nomedojogo: 'Rabit', codigo: 'https://donald.bet/casino/pgsoft/fortune-rabbit/' },
+    { nomedojogo: 'Ox', codigo: 'https://donald.bet/casino/pgsoft/fortune-ox/' },
+    { nomedojogo: 'Mouse', codigo: 'https://donald.bet/casino/pgsoft/fortune-mouse/' },
+    { nomedojogo: 'Dragon', codigo: 'https://donald.bet/casino/pgsoft/fortune-dragon/' },
+    { nomedojogo: 'Ninja', codigo: 'https://donald.bet/casino/betongames/ninja-crash/' },
+    { nomedojogo: 'Roleta', codigo: 'https://donald.bet/casino/banana/roleta-starlight-brasil/' },
+    { nomedojogo: 'Bacbo', codigo: 'https://donald.bet/casino/evolution/bac-bo/' },
+    { nomedojogo: 'Football', codigo: 'https://donald.bet/casino/evolution/football-studio/' },
+    { nomedojogo: 'DragonT', codigo: 'https://donald.bet/casino/evolution/dragon-tiger/' }
+  ];
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.forEach((value, key) => {
+        localStorage.setItem(key, value);
+        console.log(`Saved ${key}: ${value}`);
+    });
+}, [location.search]);
+
   const [inicio, setInicio] = useState(false)
   const [home, setHome] = useState(false)
 

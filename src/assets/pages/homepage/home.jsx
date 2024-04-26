@@ -183,13 +183,6 @@ export function Home({ data, selectedGame, setSGame, vipAccess = false, setVipAc
 
         </div>
 
-        {vipAccess ? "" : <section className="ctaSection borderSpacing">
-        <div className="cta-vip02-stroke" onClick={() => window.open(checkout, '_blank')}>
-            <div className="cta-vip02 " style={vipCtaStyle}>
-
-            </div>
-          </div>
-        </section>}
       </div>
 
 

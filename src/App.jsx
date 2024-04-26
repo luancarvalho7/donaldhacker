@@ -50,7 +50,9 @@ function App() {
   })
 
 
-
+  const x = [
+    
+  ]
 
   function randomizeGamesData(gamesData, index, vipAccess) {
 
@@ -288,7 +290,7 @@ function App() {
               analyst={selectedGame.analyst}
               profit={selectedGame.profit}
               onlinePlayers={selectedGame.onlinePlayers}
-              affLink={selectedGame.affLUnique}
+              /* affLink="" */
               inicio={inicio}
               home={home}
               vipAccess={vipAccess}

@@ -14,7 +14,6 @@ import { Autoplay } from 'swiper/modules';
 
 export function BannerSection({checkout, communityLink, banners}) {
 
-    console.log(banners)
     return (
         <>
             <Swiper

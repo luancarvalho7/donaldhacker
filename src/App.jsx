@@ -30,26 +30,59 @@ function App() {
   const cleanArray = [
     { nomedojogo: 'Mines', codigo: 'https://donald.bet/casino/spribe/mines/' },
     { nomedojogo: 'Aviator', codigo: 'https://donald.bet/casino/spribe/aviator/' },
-    { nomedojogo: 'SpaceMan', codigo: 'https://donald.bet/casino/pragmaticplay/live-spaceman/' },
-    { nomedojogo: 'Tiger', codigo: 'https://donald.bet/casino/pgsoft/fortune-tiger/' },
-    { nomedojogo: 'Rabit', codigo: 'https://donald.bet/casino/pgsoft/fortune-rabbit/' },
-    { nomedojogo: 'Ox', codigo: 'https://donald.bet/casino/pgsoft/fortune-ox/' },
-    { nomedojogo: 'Mouse', codigo: 'https://donald.bet/casino/pgsoft/fortune-mouse/' },
+    { nomedojogo: 'Spaceman', codigo: 'https://donald.bet/casino/pragmaticplay/live-spaceman/' },
+    { nomedojogo: 'FortuneTiger', codigo: 'https://donald.bet/casino/pgsoft/fortune-tiger/' },
+    { nomedojogo: 'FortuneRabbit', codigo: 'https://donald.bet/casino/pgsoft/fortune-rabbit/' },
+    { nomedojogo: 'FortuneOx', codigo: 'https://donald.bet/casino/pgsoft/fortune-ox/' },
+    { nomedojogo: 'FortuneMouse', codigo: 'https://donald.bet/casino/pgsoft/fortune-mouse/' },
     { nomedojogo: 'Dragon', codigo: 'https://donald.bet/casino/pgsoft/fortune-dragon/' },
-    { nomedojogo: 'Ninja', codigo: 'https://donald.bet/casino/betongames/ninja-crash/' },
-    { nomedojogo: 'Roleta', codigo: 'https://donald.bet/casino/banana/roleta-starlight-brasil/' },
-    { nomedojogo: 'Bacbo', codigo: 'https://donald.bet/casino/evolution/bac-bo/' },
-    { nomedojogo: 'Football', codigo: 'https://donald.bet/casino/evolution/football-studio/' },
-    { nomedojogo: 'DragonT', codigo: 'https://donald.bet/casino/evolution/dragon-tiger/' }
+    { nomedojogo: 'NinjaCrash', codigo: 'https://donald.bet/casino/betongames/ninja-crash/' },
+    { nomedojogo: 'Roulette', codigo: 'https://donald.bet/casino/banana/roleta-starlight-brasil/' },
+    { nomedojogo: 'BacBo', codigo: 'https://donald.bet/casino/evolution/bac-bo/' },
+    { nomedojogo: 'FootballStudio', codigo: 'https://donald.bet/casino/evolution/football-studio/' },
+    { nomedojogo: 'DragonTiger', codigo: 'https://donald.bet/casino/evolution/dragon-tiger/' }
   ];
 
+  const [updatedGames, setUpatedGames] = useState(cleanArray)
+
+
   useEffect(() => {
+
     const searchParams = new URLSearchParams(location.search);
     searchParams.forEach((value, key) => {
-        localStorage.setItem(key, value);
-        console.log(`Saved ${key}: ${value}`);
+      localStorage.setItem(key, value);
+      console.log(`Saved ${key}: ${value}`);
     });
-}, [location.search]);
+
+  }, [location.search]);
+
+
+  const [bonusLink, setBonusLink] = useState('')
+  useEffect(() => {
+
+    const bonusRef = localStorage.getItem('b')
+
+    const refz = localStorage.getItem('ref')
+
+    const makeBonusLink = `https://donald.bet/en?ref=${refz}&src=${bonusRef}&utm_source=${refz}`
+
+    const modifiedArray = cleanArray.map((game, index) => {
+      const src = localStorage.getItem(index.toString()); // Assuming the localStorage keys are the indices (0, 1, 2,...)
+      const newCodigo = src ? `${game.codigo}?ref=${refz}&src=${src}&utm_source=${refz}` : game.codigo;
+      return { ...game, codigo: newCodigo };
+
+    });
+
+  
+    setBonusLink(makeBonusLink)
+    setUpatedGames(modifiedArray)
+    console.log(modifiedArray)
+  }, [])
+
+
+
+
+
 
   const [inicio, setInicio] = useState(false)
   const [home, setHome] = useState(false)
@@ -74,9 +107,6 @@ function App() {
   })
 
 
-  const x = [
-    
-  ]
 
   function randomizeGamesData(gamesData, index, vipAccess) {
 
@@ -281,8 +311,7 @@ function App() {
         };
 
       });
-/*       console.log(newGamesData)
- */        ; // Logging the new array, not the old one
+        ; // Logging the new array, not the old one
       setGamesData(newGamesData);
     }
 
@@ -292,6 +321,12 @@ function App() {
   useEffect(() => {
     console.log(gamesData)
   }, [gamesData])
+
+
+/*   useEffect(() => {
+    
+    console.log(updatedGames.find(game => game.nomedojogo === selectedGame.game)?.codigo)
+  }, [updatedGames, selectedGame]) */
 
 
   return (
@@ -306,7 +341,7 @@ function App() {
           <BottomNav vipAccess={vipAccess} extrapages={appData.extrapages} checkout={appData.vipCheckout} />
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<Home data={gamesData} selectedGame={selectedGame} setSGame={setSGame} vipAccess={false} checkout={appData.vipCheckout} communityLink={appData.community} banners={appData.banners} vipcta={appData.vipcta} />} />
+            <Route path="/" element={<Home data={gamesData} selectedGame={selectedGame} setSGame={setSGame} vipAccess={true} checkout={appData.vipCheckout} communityLink={appData.community} banners={appData.banners} vipcta={appData.vipcta} />} />
             <Route path="/modevip" element={<Home data={gamesData} selectedGame={selectedGame} setSGame={setSGame} vipAccess={true} setVipAccess={setVipAccess} checkout={appData.vipCheckout} communityLink={appData.community} banners={appData.banners} vipcta={appData.vipcta} />} />
             <Route path="/chat" element={<ChatPage
               game={selectedGame.game}
@@ -314,14 +349,14 @@ function App() {
               analyst={selectedGame.analyst}
               profit={selectedGame.profit}
               onlinePlayers={selectedGame.onlinePlayers}
-              /* affLink="" */
+              updatedGames={updatedGames}
               inicio={inicio}
               home={home}
-              vipAccess={vipAccess}
+              vipAccess={true}
               lastDayProfit={selectedGame.lastDayProfit}
               currentDayProfit={selectedGame.currentDayProfit}
             />} />
-            <Route path='/bonus' element={<Bonus inicio={inicio} affLink={affLink} img={appData.pageheaderes.bonus}
+            <Route path='/bonus' element={<Bonus inicio={inicio} affLink={bonusLink} img={appData.pageheaderes.bonus}
             />} />
             <Route path='/lives' element={<Lives img={appData.pageheaderes.lives} telegramLink={appData.community} />} />
             <Route path='/tutorial' element={<Tutorial />} />

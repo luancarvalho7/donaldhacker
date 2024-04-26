@@ -18,7 +18,8 @@ export function ChatPage({
     analyst = "John Doe",
     profit = 999999,
     onlinePlayers = 999,
-    affLink = "juice",
+    affLink = "",
+    updatedGames = [],
     v33 = false,
     vipAccess = false,
     lastDayProfit = 0,
@@ -26,6 +27,18 @@ export function ChatPage({
     inicio = false,
     home = false
 }) {
+
+    const [newAffLink, setNewAffLink] = useState("")
+
+    useEffect(() => {
+
+        if(game != "" && game != null){
+            const x = updatedGames.find(gameA => game.includes(gameA.nomedojogo))?.codigo;
+            setNewAffLink(x);
+        }
+       
+        
+    }, [])
 
     const [msgHour, setMsgHour] = useState('')
     const [seed, setSeed] = useState(`${game}`)
@@ -36,7 +49,7 @@ export function ChatPage({
 
 
     useEffect(() => {
-        if (location.pathname === '/' || location.pathname === '/v33' ||  location.pathname === '/inicio' ||  location.pathname === '/home' ||  location.pathname === '/modevip' ||  location.pathname === '/viplion' && hasNavigatedAway.current) {
+        if (location.pathname === '/' || location.pathname === '/v33' || location.pathname === '/inicio' || location.pathname === '/home' || location.pathname === '/modevip' || location.pathname === '/viplion' && hasNavigatedAway.current) {
             hasNavigatedAway.current = false;
         }
 
@@ -185,44 +198,44 @@ export function ChatPage({
             const parts = timeStr.split(':');
             const hours = parseInt(parts[0], 10);
             const minutes = parseInt(parts[1], 10);
-          
+
             // Create a date object using the extracted time
             const time = new Date();
             time.setHours(hours);
             time.setMinutes(minutes);
-          
+
             // Add five minutes
             time.setMinutes(time.getMinutes() + 5);
-          
+
             // Format the new time back into a string
             const newHour = time.getHours().toString().padStart(2, '0');
             const newMinutes = time.getMinutes().toString().padStart(2, '0');
-            
+
             return `${newHour}:${newMinutes}`;
-          }
-        
-        const timeLimit = addFiveMinutes(msgHour) 
+        }
+
+        const timeLimit = addFiveMinutes(msgHour)
 
 
         let sinal = "";
         let finalMessage = ""
         let greenMessage = ""
 
-        const greenPlayers = Math.floor(((0.88 - 0.75) * rng() + 0.75)*onlinePlayers)
+        const greenPlayers = Math.floor(((0.88 - 0.75) * rng() + 0.75) * onlinePlayers)
 
-            function getRandomMessage() {
+        function getRandomMessage() {
             const messages = [
-              `Aíí sim galeraa, deu green pra ${greenPlayers} pessoas`,
-              `Showw, ${greenPlayers} pessoas forraram com essa 🤑`,
-              `Forramos familia! ${greenPlayers} levaram essa 🤑`,
-              `Opaa ${greenPlayers} encheram o bolso com essa ✅✅`,
-              `Alguém ficou de fora? Aqui deu green pra ${greenPlayers} jogadores🤑`
+                `Aíí sim galeraa, deu green pra ${greenPlayers} pessoas`,
+                `Showw, ${greenPlayers} pessoas forraram com essa 🤑`,
+                `Forramos familia! ${greenPlayers} levaram essa 🤑`,
+                `Opaa ${greenPlayers} encheram o bolso com essa ✅✅`,
+                `Alguém ficou de fora? Aqui deu green pra ${greenPlayers} jogadores🤑`
             ];
-          
+
             const randomIndex = Math.floor(rng() * messages.length);
-          
+
             return messages[randomIndex];
-          }
+        }
         /* 
                 FREE GAMES */
 
@@ -574,7 +587,7 @@ export function ChatPage({
             />
             <div id='todayMsgDate'> <p className='greenGradientText'>{onlinePlayers == 0 ? (today.getHours() > 21 ? "HOJE" : "ONTEM") : "HOJE"}</p>  </div>
             <Message analyst={analyst} analystPfp={analystPfp} message={message} hour={onlinePlayers == 0 ? "21:00" : msgHour} />
-            <iframe src={affLink} id='iframeCasino'></iframe>
+            <iframe src={newAffLink} id='iframeCasino'></iframe>
         </section>
     );
 }

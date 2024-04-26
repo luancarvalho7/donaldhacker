@@ -57,14 +57,12 @@ const ResgateBonus = () => {
 
 export function BottomNav({ v33, vipAccess = false, extrapages, checkout}) {
 
-    console.log(extrapages)
 
     const navigate = useNavigate()
     const location = useLocation()
     const selected = location.pathname
 
     const switchPage = (path) => {
-        console.log(vipAccess)
         navigate(path);      // Navigate to the new route
     };
 
@@ -73,7 +71,6 @@ export function BottomNav({ v33, vipAccess = false, extrapages, checkout}) {
     }
 
     useEffect(()=>{
-        console.log(vipAccess)
     })
 
     return (

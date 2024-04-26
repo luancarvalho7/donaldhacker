@@ -57,9 +57,14 @@ function App() {
   }, [location.search]);
 
 
+  const [bonusLink, setBonusLink] = useState('')
   useEffect(() => {
 
+    const bonusRef = localStorage.getItem('b')
+
     const refz = localStorage.getItem('ref')
+
+    const makeBonusLink = `https://donald.bet/en?ref=${refz}&src=${bonusRef}&utm_source=${refz}`
 
     const modifiedArray = cleanArray.map((game, index) => {
       const src = localStorage.getItem(index.toString()); // Assuming the localStorage keys are the indices (0, 1, 2,...)
@@ -68,10 +73,12 @@ function App() {
 
     });
 
-
+  
+    setBonusLink(makeBonusLink)
     setUpatedGames(modifiedArray)
     console.log(modifiedArray)
   }, [])
+
 
 
 
@@ -349,7 +356,7 @@ function App() {
               lastDayProfit={selectedGame.lastDayProfit}
               currentDayProfit={selectedGame.currentDayProfit}
             />} />
-            <Route path='/bonus' element={<Bonus inicio={inicio} affLink={affLink} img={appData.pageheaderes.bonus}
+            <Route path='/bonus' element={<Bonus inicio={inicio} affLink={bonusLink} img={appData.pageheaderes.bonus}
             />} />
             <Route path='/lives' element={<Lives img={appData.pageheaderes.lives} telegramLink={appData.community} />} />
             <Route path='/tutorial' element={<Tutorial />} />

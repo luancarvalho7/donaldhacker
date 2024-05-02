@@ -1,17 +1,5 @@
 [
     {
-        "game": "NinjaCrash",
-        "vip": false,
-        "profit": 13000,
-        "analyst": ["Luiz R.", "Pedro A."],
-        "onlinePlayers": 58,
-        "gameImage": "https://i.postimg.cc/44F4TmXH/ninjacrash.png",
-        "analystPfp": "https://i.postimg.cc/P5n9n4DV/pink.png",
-        "ifrCassinoPix": "https://go.aff.7k-partners.com/sj7lv6oa?source_id=app",
-        "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
-        "type":"slots"
-    },
-    {
         "game": "Mines",
         "vip": false,
         "profit": 10100,
@@ -73,42 +61,6 @@
         "type": "crash"  
     },
     {
-        "game": "Spaceman",
-        "vip": false,
-        "profit": 11150,
-        "analyst": ["Lucca N.", "Paty O."],
-        "onlinePlayers": 101,
-        "gameImage": "https://i.postimg.cc/bw9RZXCb/spaceman-15x.webp",
-        "analystPfp": "https://i.postimg.cc/P5n9n4DV/pink.png",
-        "ifrCassinoPix": "https://go.aff.7k-partners.com/kvn9go9k?source_id=app",
-        "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
-        "type": "crash"
-    },
-    {
-        "game": "Spaceman2x",
-        "vip": true,
-        "profit": 26294,
-        "analyst": ["Vanessa P.", "Sophia L."],
-        "onlinePlayers": 101,
-        "gameImage": "https://i.postimg.cc/t4ddZdMc/spaceman-2x.webp",
-        "analystPfp": "https://i.postimg.cc/P5n9n4DV/pink.png",
-        "ifrCassinoPix": "https://go.aff.7k-partners.com/kvn9go9k?source_id=app",
-        "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
-        "type": "crash"
-    },
-    {
-        "game": "SpacemanVa",
-        "vip": true,
-        "profit": 23294,
-        "analyst": ["Isabela Q.", "Teteu R."],
-        "onlinePlayers": 101,
-        "gameImage": "https://i.postimg.cc/N0g619hj/spaceman-va.webp",
-        "analystPfp": "https://i.postimg.cc/P5n9n4DV/pink.png",
-        "ifrCassinoPix": "https://go.aff.7k-partners.com/kvn9go9k?source_id=app",
-        "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
-        "type": "crash"
-    },
-    {
         "game": "FortuneTiger",
         "vip": false,
         "profit": 8000,
@@ -167,42 +119,5 @@
         "ifrCassinoPix": "https://go.aff.7k-partners.com/pqslg7lk?source_id=app",
         "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
         "type": "slots"
-    },
-    {
-        "game": "BacBo",
-        "vip": true,
-        "profit": 26910,
-        "analyst": ["Ícaro S.", "Lilian R."],
-        "onlinePlayers": 178,
-        "gameImage": "https://i.postimg.cc/qqtXz9Pc/bacbo.webp",
-        "analystPfp": "https://i.postimg.cc/FK967HDj/white.png",
-        "ifrCassinoPix": "https://go.aff.7k-partners.com/8v1wexz5?source_id=app",
-        "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
-        "type": "casino"
-    },
-    {
-        "game": "DragonTiger",
-        "vip": true,
-        "profit": 28491,
-        "analyst": ["Vini T.", "Luan C."],
-        "onlinePlayers": 117,
-        "gameImage": "https://i.postimg.cc/ZRsxYTMK/dragon-tigger.webp",
-        "analystPfp": "https://i.postimg.cc/jS69x7Qx/yellow.png",
-        "ifrCassinoPix": "https://go.aff.7k-partners.com/c7zshtfx?source_id=app",
-        "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
-        "type": "casino"
-    },
-    {
-        "game": "FootballStudio",
-        "vip": true,
-        "profit": 27890,
-        "analyst": ["Amin A.", "Anthony L."],
-        "onlinePlayers": 191,
-        "gameImage": "https://i.postimg.cc/dQXjzVC5/football-studio.webp",
-        "analystPfp": "https://i.postimg.cc/SQ5HDqxh/blue.png",
-        "ifrCassinoPix": "https://go.aff.7k-partners.com/593v03c1?source_id=app",
-        "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
-        "type": "casino"
-    
     }
 ]

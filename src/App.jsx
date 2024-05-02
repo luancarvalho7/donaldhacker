@@ -30,17 +30,12 @@ function App() {
   const cleanArray = [
     { nomedojogo: 'Mines', codigo: 'https://donald.bet/casino/spribe/mines/' },
     { nomedojogo: 'Aviator', codigo: 'https://donald.bet/casino/spribe/aviator/' },
-    { nomedojogo: 'Spaceman', codigo: 'https://donald.bet/casino/pragmaticplay/live-spaceman/' },
     { nomedojogo: 'FortuneTiger', codigo: 'https://donald.bet/casino/pgsoft/fortune-tiger/' },
     { nomedojogo: 'FortuneRabbit', codigo: 'https://donald.bet/casino/pgsoft/fortune-rabbit/' },
     { nomedojogo: 'FortuneOx', codigo: 'https://donald.bet/casino/pgsoft/fortune-ox/' },
     { nomedojogo: 'FortuneMouse', codigo: 'https://donald.bet/casino/pgsoft/fortune-mouse/' },
     { nomedojogo: 'Dragon', codigo: 'https://donald.bet/casino/pgsoft/fortune-dragon/' },
-    { nomedojogo: 'NinjaCrash', codigo: 'https://donald.bet/casino/betongames/ninja-crash/' },
     { nomedojogo: 'Roulette', codigo: 'https://donald.bet/casino/banana/roleta-starlight-brasil/' },
-    { nomedojogo: 'BacBo', codigo: 'https://donald.bet/casino/evolution/bac-bo/' },
-    { nomedojogo: 'FootballStudio', codigo: 'https://donald.bet/casino/evolution/football-studio/' },
-    { nomedojogo: 'DragonTiger', codigo: 'https://donald.bet/casino/evolution/dragon-tiger/' }
   ];
 
   const [updatedGames, setUpatedGames] = useState(cleanArray)

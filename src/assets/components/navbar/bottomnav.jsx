@@ -108,16 +108,6 @@ export function BottomNav({ v33, vipAccess = false, extrapages, checkout}) {
                         <h3>Tutorial</h3>
                     </button>}
 
-
-                    {vipAccess ? '' :
-                        <button
-                            className="bn-btn"
-                        >
-                            <a href={checkout} target="_blank" rel="noopener noreferrer">
-                                <VipDmd />
-                                <h3>Seja VIP</h3>
-                            </a>
-                        </button>}
                 </div>
             </nav>
         </>

@@ -31,12 +31,7 @@ export function Nav({ v33, vipAccess = false, logo, checkout }) {
 
                 onClick={navigateHome}
             />
-        </div>{
-            vipAccess ? <button className="vipButton bg-gradient">  Membro VIP  </button> : <a href={checkout} target="_blank" rel="noopener noreferrer">
-                <button className="vipButton bg-gradient">  Acesso VIP    </button>
-            </a>
-
-        }
+        </div>
 
 
 

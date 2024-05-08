@@ -376,11 +376,14 @@ export function ChatPage({
             greenMessage = getRandomMessage()
 
         }
-        if (game === "DragonTiger") {
-            sinal = getTwiceSignal(`Aposte no <strong class="greenGradientText"> Dragão </strong> `, `Aposte no <strong class="greenGradientText">Tigre</strong>`)
-            finalMessage = `É sinalzinho que vcs querem?? <br/>
-            ${sinal} e marque o EMPATE. <br/> 
-            Entrem até ${timeLimit}`
+        if (game === "Dragon") {
+            sinal = getFortuneSignal();
+            finalMessage = `
+            
+            Sinalziho válido até ${timeLimit} <br/>
+            ${sinal} <br/>
+            DRAGÃO TÁ PAGANDO!
+            `
 
             greenMessage = getRandomMessage()
 

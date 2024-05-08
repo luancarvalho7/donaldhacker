@@ -119,5 +119,17 @@
         "ifrCassinoPix": "https://go.aff.7k-partners.com/pqslg7lk?source_id=app",
         "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
         "type": "slots"
+    },
+    {
+        "game": "Dragon",
+        "vip": true,
+        "profit": 31473,
+        "analyst": ["Gabriel V.", "Wendel R."],
+        "onlinePlayers": 79,
+        "gameImage": "https://i.postimg.cc/yNtvzS63/image.jpg",
+        "analystPfp": "https://i.postimg.cc/P5n9n4DV/pink.png",
+        "ifrCassinoPix": "https://go.aff.7k-partners.com/pqslg7lk?source_id=app",
+        "ifrSkyBet":"https://eskybet.com/cadastro?afiliado=00",
+        "type": "slots"
     }
 ]

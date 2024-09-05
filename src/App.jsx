@@ -35,7 +35,7 @@ function App() {
     { nomedojogo: 'FortuneOx', codigo: 'https://donald.bet/casino/pgsoft/fortune-ox/' },
     { nomedojogo: 'FortuneMouse', codigo: 'https://donald.bet/casino/pgsoft/fortune-mouse/' },
     { nomedojogo: 'Dragon', codigo: 'https://donald.bet/casino/pgsoft/fortune-dragon/' },
-    { nomedojogo: 'Roulette', codigo: 'https://donald.bet/casino/banana/roleta-starlight-brasil/' },
+    { nomedojogo: 'Roulette', codigo: 'https://donald.bet/casino/banana/starlight-roulette/' },
   ];
 
   const [updatedGames, setUpatedGames] = useState(cleanArray)
